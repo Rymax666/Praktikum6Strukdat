@@ -27,12 +27,16 @@ public class Main{
         }catch (Exception e){
             System.out.println("Pacarku Lemu");
         }
+        //Menggabungkan Kalimat 1 dan 2
         String Kalimat = kalimat1 +", "+ kalimat2;
+        //Menggabungkan syntax dengan var regex agar bisa terbaca
         String regexreal = ".*"+regex+".*";
+        //jika kata regex ada di dalam kalimat
         if (Pattern.matches(regexreal,Kalimat) == true){
             System.out.print("Masukkan Kata untuk me-replace regex : ");
             try{
             replace = bf.readLine();
+            //me-replace kata regex di dalam kalimat dengan kata replace
             replaceFix = Kalimat.replaceAll(regex,replace);
             }catch (Exception e){
                 System.out.println(" ");
@@ -58,6 +62,7 @@ public class Main{
         String kalimat1 = null;
         String kalimat2 = null;
         String kalimat3 = null;
+        String Key = null;
         try{
             //definisi variavel
             System.out.print("Masukkan Kalimat Ke-1 : ");
@@ -66,16 +71,17 @@ public class Main{
             kalimat2 = bf.readLine();
             System.out.print("Masukkan Kalimat ke-3 : ");
             kalimat3 = bf.readLine();
+            System.out.print("Masukkan Key : ");
+            Key = bf.readLine();
         }catch (Exception e){
             System.out.println("Pacarku Rewel");
         }
-
-        //definisi kata kunci
-        String key = ".*cinta.*";
-
-        boolean kondisi1 = Pattern.matches(key,kalimat1);
-        boolean kondisi2 = Pattern.matches(key,kalimat2);
-        boolean kondisi3 = Pattern.matches(key,kalimat3);
+        //Menambahkan syntax ke var key agar bisa dibaca
+        String realkey = ".*"+Key+".*";
+        //mengecek apakah key berada didalam kalimat
+        boolean kondisi1 = Pattern.matches(realkey,kalimat1);
+        boolean kondisi2 = Pattern.matches(realkey,kalimat2);
+        boolean kondisi3 = Pattern.matches(realkey,kalimat3);
 
         System.out.println("Kondisi Pertama : "+kondisi1);
         System.out.println("Kondisi Kedua   : "+kondisi2);
