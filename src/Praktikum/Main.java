@@ -33,7 +33,7 @@ public class Main{
             System.out.print("Masukkan Kata untuk me-replace regex : ");
             try{
             replace = bf.readLine();
-            replaceFix = Kalimat.replaceAll(regex,Matcher.quoteReplacement(replace));
+            replaceFix = Kalimat.replaceAll(regex,replace);
             }catch (Exception e){
                 System.out.println(" ");
             }
